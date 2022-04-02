@@ -3,10 +3,13 @@ const app = express();
 const PORT = 6000;
 const mongoose  = require('mongoose');
 const cors = require("cors");
+const cookiepaser = require('cookie-parser');
+const authRoutes = require("./Routes/AuthRoutes")
 
 // middelware
 app.use(cors());
 app.use(express.json());
+app.use(cookiepaser())
 
 //  database connect
 // uri string i am using local database thats why not use username pass
@@ -19,6 +22,8 @@ app.get('/', () => {
     
     console.log('get runnig');
 })
+
+app.use('/', authRoutes)
 
 
 
