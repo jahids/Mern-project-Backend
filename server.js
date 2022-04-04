@@ -6,7 +6,7 @@ const cors = require("cors");
 const cookieParser = require('cookie-parser')
 const authRoutes = require("./Routes/AuthRoutes")
 
-const whiteList = ['http://127.0.0.1:5000', 'http://localhost:3002'];
+const whiteList = ['http://127.0.0.1:5000', 'http://localhost:3000'];
 
 const corsOption = {
     origin: (origin, callback) => {
