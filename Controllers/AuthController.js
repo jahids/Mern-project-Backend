@@ -2,7 +2,6 @@ const UserModel = require('../Models/UserModel')
 const jwt = require('jsonwebtoken');
 // const { createToken, handleErrors } = require('../helpers/AuthHelper');
 
-
 const MAX_AGE = 3 * 24 * 60 * 60;
 
 const createToken = (id) => {
@@ -27,10 +26,10 @@ const handleErrors = (err) => {
 
 
 const AuthController = {
-    login: async (req, res, next) => {
+    login: async  (req, res, next) => {
 
         try {
-            const { email, password, role } = req.body;
+            const { email, password} = req.body;
             console.log(email, password)
             const user = await UserModel.findOne({
                 email,
@@ -71,12 +70,11 @@ const AuthController = {
     register: async (req, res, next) => {
 
         try {
-            const { email, password, role } = req.body;
-            console.log(email, password, role)
+            const { email, password} = req.body;
+            console.log(email, password)
             const user = await UserModel.create({
                 email,
-                password,
-                role
+                password
             })
 
             const token = createToken(user._id); //database id peramitar
