@@ -11,6 +11,7 @@ module.exports.handleErrors = (err) => {
         errors.email = "Email is already registered";
         return errors;
     }
+    
 
     if (err.message.includes("Users validation failed")) {
         errors.email = "varificatun faield";

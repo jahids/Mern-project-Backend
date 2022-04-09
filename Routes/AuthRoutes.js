@@ -7,5 +7,9 @@ const router = app.Router();
 router.post("/", checkuser);
 router.post("/register",AuthController.register)
 router.post("/login",AuthController.login)
+router.get("/admin",AuthController.admin)
+router.post("/update/:id",AuthController.update)
+router.post("/User",AuthController.SingleUser)
+router.post("/UserE/:id",AuthController.Usar)
 
 module.exports = router;
