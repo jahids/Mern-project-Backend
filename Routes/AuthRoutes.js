@@ -11,5 +11,6 @@ router.get("/admin",AuthController.admin)
 router.post("/update/:id",AuthController.update)
 router.post("/User",AuthController.SingleUser)
 router.post("/UserE/:id",AuthController.Usar)
+router.post("/Delete/:id",AuthController.Delete)
 
 module.exports = router;
